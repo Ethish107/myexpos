@@ -1,0 +1,12 @@
+MOV R0, 1      // Initialize counter R0 with 1
+MOV R1, 20     // Set limit R1 to 20
+
+LOOP:
+    OUT R0     // Print the value in R0 to the console
+    INR R0     // Increment R0
+    GE R1, R0  // Check if 20 >= R0. Sets flag to 1 if true, 0 if false.
+    JZ R1, END // If the flag is 0 (R0 > 20), jump to END
+    JMP LOOP   // Otherwise, repeat the loop
+
+END:
+    HALT       // Stop the machine
